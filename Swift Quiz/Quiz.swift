@@ -7,6 +7,20 @@
 
 import Foundation
 
-struct Quiz {
+class Quiz {
     
+    let question: String
+    let options: [String]
+    private let correctAnswer: String
+    
+    func validadeOptions(_ index: Int) -> Bool {
+        let answer = options[index]
+        return answer == correctAnswer
+    }
+    
+    init(question: String, options: [String], correctAnswer: String) {
+        self.question = question
+        self.options = options
+        self.correctAnswer = correctAnswer
+    }
 }
